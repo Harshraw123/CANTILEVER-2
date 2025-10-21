@@ -1,32 +1,37 @@
+# CANTILEVER-2  
+A Modern Task Manager Web App  
 
-# CANTILEVER-2
+## 🚀 Features
 
-A **Modern Task Manager Web App** built with the **MERN stack** (MongoDB, Express.js, React, Node.js).  
-Manage your tasks efficiently with **CRUD operations**, authentication, and a sleek, responsive interface.
+- **User Authentication**  
+  - Secure signup, login, and session management.  
 
----
+- **Task CRUD Operations**  
+  - Create, read, update, and delete tasks seamlessly.  
 
-## Features
+- **Task Filters & Sorting**  
+  - Filter tasks by **priority** (High, Medium, Low).  
+  - Sort tasks by **newest, oldest, or due date**.  
+  - Quickly find and manage tasks with an intuitive interface.  
 
-- **User Authentication**: Secure signup and login with JWT.
-- **Task Management**:
-  - Create, read, update, and delete tasks.
-  - Mark tasks as complete or pending.
-- **Responsive Design**: Works seamlessly on desktop and mobile devices.
-- **Modern UI**: Clean, intuitive, and professional interface.
-- **Real-time Updates**: Changes reflected immediately without page reloads.
+- **Task Overview Dashboard**  
+  - Tasks grouped by status: Pending, In Progress, Completed.  
+  - Sleek, responsive cards for fast task tracking.  
 
----
 
-## Tech Stack
-
-- **Frontend**: React, Tailwind CSS, Axios, React Router
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB (via Mongoose)
-- **Authentication**: JWT (JSON Web Tokens)
-- **Deployment Ready**: Easily deployable to Vercel, Render, or Heroku
+- **Responsive & Modern UI**  
+  - Works on desktop and mobile with smooth animations.  
+  - Fast-loading interface with clean layouts and subtle shadows.  
 
 ---
 
+## 🛠 Tech Stack
+
+- **Frontend:** React, TailwindCSS, React Router, Axios  
+- **Backend:** Node.js, Express.js, MongoDB, Mongoose  
+- **Authentication:** JWT-based token authentication  
+
+
+---
 
 
