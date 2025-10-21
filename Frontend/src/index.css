@@ -1,0 +1,262 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ===========================================
+   Tailwind Base / Components / Utilities
+=========================================== */
+
+/* ===========================================
+   Custom Variants
+=========================================== */
+@custom-variant dark (&:is(.dark *));
+
+/* ===========================================
+   Design System — Unified HSL + OKLCH Palette
+=========================================== */
+@layer base {
+  :root {
+    /* Base radius and transitions */
+    --radius: 0.75rem;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Colors (HSL palette as primary system) */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 11%;
+
+    /* Enhanced gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(222 47% 11%), hsl(216 34% 17%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%), hsl(214 32% 95%));
+    --gradient-text: linear-gradient(135deg, hsl(222 47% 11%), hsl(215 16% 35%));
+    --gradient-mesh: radial-gradient(at 0% 0%, hsl(214 32% 91% / 0.3) 0%, transparent 50%),
+                     radial-gradient(at 100% 0%, hsl(222 47% 11% / 0.05) 0%, transparent 50%),
+                     radial-gradient(at 100% 100%, hsl(214 32% 91% / 0.3) 0%, transparent 50%),
+                     radial-gradient(at 0% 100%, hsl(216 34% 17% / 0.05) 0%, transparent 50%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 20px -2px hsl(222 47% 11% / 0.06);
+    --shadow-medium: 0 8px 30px -4px hsl(222 47% 11% / 0.1);
+    --shadow-large: 0 20px 50px -10px hsl(222 47% 11% / 0.15);
+    --shadow-glow: 0 0 40px -10px hsl(216 34% 17% / 0.2);
+
+    /* OKLCH fallback colors (modern color space support) */
+    --oklch-background: oklch(1 0 0);
+    --oklch-foreground: oklch(0.145 0 0);
+    --oklch-card: oklch(1 0 0);
+    --oklch-primary: oklch(0.205 0 0);
+    --oklch-primary-foreground: oklch(0.985 0 0);
+    --oklch-secondary: oklch(0.97 0 0);
+    --oklch-border: oklch(0.922 0 0);
+    --oklch-ring: oklch(0.708 0 0);
+  }
+
+  .dark {
+    /* Dark mode overrides */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 7%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 214 32% 88%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 210 40% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(222 47% 7%), hsl(217 33% 12%));
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 4%), hsl(222 47% 7%));
+    --gradient-text: linear-gradient(135deg, hsl(210 40% 98%), hsl(215 20% 75%));
+    --gradient-mesh: radial-gradient(at 0% 0%, hsl(217 33% 12% / 0.5) 0%, transparent 50%),
+                     radial-gradient(at 100% 0%, hsl(222 47% 7% / 0.3) 0%, transparent 50%),
+                     radial-gradient(at 100% 100%, hsl(217 33% 12% / 0.5) 0%, transparent 50%),
+                     radial-gradient(at 0% 100%, hsl(222 47% 7% / 0.3) 0%, transparent 50%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 20px -2px hsl(0 0% 0% / 0.4);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.5);
+    --shadow-large: 0 20px 50px -10px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 40px -10px hsl(210 40% 98% / 0.1);
+
+    /* OKLCH fallback */
+    --oklch-background: oklch(0.145 0 0);
+    --oklch-foreground: oklch(0.985 0 0);
+    --oklch-card: oklch(0.205 0 0);
+    --oklch-primary: oklch(0.922 0 0);
+    --oklch-ring: oklch(0.556 0 0);
+  }
+}
+
+/* ===========================================
+   Base Styles
+=========================================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* ===========================================
+   Utility Classes
+=========================================== */
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .glass-effect {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Responsive utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Mobile-first responsive adjustments */
+  @media (max-width: 640px) {
+    .mobile-hidden {
+      display: none !important;
+    }
+    
+    .mobile-text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+    
+    .mobile-p-2 {
+      padding: 0.5rem;
+    }
+  }
+  
+}
+
+/* ===========================================
+   Theme Inline (Tailwind v4)
+=========================================== */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
