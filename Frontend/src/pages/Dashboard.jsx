@@ -179,7 +179,7 @@ const Index = () => {
           onNewTask={() => setIsAddModalOpen(true)}
         />
 
-        <main className="flex-1 p-3 sm:p-4 lg:p-6 xl:p-8 overflow-y-auto">
+        <main className="flex-1 p-3 sm:p-4  lg:p-6 xl:p-8 overflow-y-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -191,14 +191,14 @@ const Index = () => {
   <CreateTask/>
 
 ) : (
-  <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-foreground mb-1">
+  <h1 className="text-xl mt-7 md:mt-[-10px]  sm:text-2xl  lg:text-3xl xl:text-4xl font-bold text-foreground mb-1">
     {activeTab === 'all'
       ? 'All Tasks'
       : activeTab === 'completed'
       ? 'Completed Tasks'
       : activeTab === 'pending'
       ? 'Pending Tasks'
-      : 'Settings'}
+  :''}
   </h1>
 )}
 
@@ -211,7 +211,7 @@ const Index = () => {
                 ? 'View all completed tasks'
                 : activeTab === 'pending'
                 ? 'Tasks that need your attention'
-                : 'Configure your preferences'}
+                : ''}
             </p>
           </motion.div>
 

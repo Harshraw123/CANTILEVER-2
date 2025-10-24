@@ -122,18 +122,23 @@ export default function AddTaskModal({ isOpen, onClose, onSubmit, isLoading }) {
           {/* Completed Switch */}
           <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
             <div className="space-y-0.5">
-              <Label htmlFor="completed" className="text-sm font-medium text-gray-800">
+              <Label
+                htmlFor="edit-completed"
+                className="text-sm font-medium text-gray-800"
+              >
                 Mark as Completed
               </Label>
               <p className="text-xs text-gray-500">
-                Set initial completion status
+                Toggle to mark task status.
               </p>
             </div>
             <Switch
-              id="completed"
+              id="edit-completed"
               checked={formData.completed}
-              onCheckedChange={(checked) => setFormData({ ...formData, completed: checked })}
-          
+              onCheckedChange={(checked) =>
+                setFormData({ ...formData, completed: checked })
+              }
+              className="data-[state=checked]:bg-green-500 data-[state=unchecked]:bg-gray-300"
             />
           </div>
 
