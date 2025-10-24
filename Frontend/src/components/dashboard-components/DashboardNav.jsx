@@ -31,7 +31,7 @@ function DashboardNav({ searchQuery, onSearchChange, onNewTask }) {
       </div>
 
       {/* Actions Section */}
-      <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3">
+      <div className="flex items-center gap-1 sm:gap-2 lg:gap-3">
         {/* New Task Button */}
         <Button
           onClick={onNewTask}
@@ -39,7 +39,7 @@ function DashboardNav({ searchQuery, onSearchChange, onNewTask }) {
           className="bg-[linear-gradient(60deg,#29323c_0%,#485563_100%)] text-white text-center hover:opacity-90 rounded-full shadow-md h-8 sm:h-10 sm:ml-2 px-2 sm:px-4"
         >
           <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
-          <span className="hidden sm:inline">New Task</span>
+          <span className="hidden sm:inline">New Task </span>
         </Button>
 
        
