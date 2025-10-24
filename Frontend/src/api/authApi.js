@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:4000/api", // Backend server URL
+  baseURL: "https://cantilever-2-backend.vercel.app/api", // Backend server URL
 });
 
 // Add token to all requests automatically
